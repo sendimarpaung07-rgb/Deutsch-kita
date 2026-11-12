@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#234b3b">
+<link rel="manifest" href="manifest.json">
+<link rel="apple-touch-icon" href="icons/icon-192.png">
+<title>Deutsch Kita | Belajar Bahasa Jerman</title>
+<style>
+:root{--g:#234b3b;--g2:#38634e;--cream:#fbf8ef;--paper:#fffefa;--mint:#eaf1e9;--gold:#d5ae68;--ink:#24342d;--muted:#6d7b72;--line:#e4e8df;--red:#a84c43}
+*{box-sizing:border-box}body{margin:0;background:var(--cream);color:var(--ink);font:15px/1.55 system-ui,-apple-system,"Segoe UI",sans-serif}header{background:var(--g);color:white;padding:20px 16px 14px}header>div,main{max-width:1040px;margin:auto}.brand{font:700 29px Georgia,serif}.tag{font-size:12px;opacity:.8}.nav{display:flex;gap:7px;overflow:auto;margin-top:17px;padding-bottom:3px}.nav button{white-space:nowrap;background:#ffffff18;color:white;border:1px solid #ffffff38;padding:9px 13px}.nav button.active{background:white;color:var(--g)}main{padding:19px 15px 60px}button{border:0;border-radius:11px;padding:10px 13px;background:var(--mint);color:var(--g);font-weight:650;cursor:pointer}button.primary{background:var(--g);color:white}button.gold{background:#f3ead8;color:#70521f}button:disabled{opacity:.45;cursor:not-allowed}input,select{width:100%;padding:11px 12px;border:1px solid #d9e0d6;border-radius:11px;background:white;font:inherit;margin:5px 0 10px}.hero{padding:23px;border-radius:19px;background:linear-gradient(120deg,#e5eee3,#f5ead6);margin-bottom:18px}.hero h1{font:700 27px Georgia,serif;margin:0 0 7px}.stats{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}.stats span,.chip{background:#ffffffbd;border-radius:30px;padding:5px 10px;font-size:12px}.row{display:flex;gap:9px;flex-wrap:wrap}.row>*{flex:1;min-width:130px}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}.card,.panel{background:var(--paper);border:1px solid var(--line);border-radius:15px;padding:16px}.card h3{font:700 19px Georgia,serif;margin:7px 0}.card p{margin:7px 0}.muted,.small{color:var(--muted);font-size:13px}.pill{display:inline-block;background:var(--mint);color:var(--g2);padding:3px 9px;border-radius:20px;font-size:11px;margin:2px}.hidden{display:none!important}h2{font:700 24px Georgia,serif;margin:5px 0 12px}.reader{margin-top:14px}.de{font-size:18px;font-weight:600}.translation{background:#f0f4ed;padding:12px;border-radius:10px;margin:10px 0}.word{display:flex;justify-content:space-between;gap:10px;align-items:center;border-bottom:1px solid var(--line);padding:9px 0}.word small{color:var(--muted)}.choice{display:block;text-align:left;width:100%;margin:8px 0;background:white;border:1px solid var(--line);color:var(--ink)}.choice.selected{border:2px solid var(--g);background:var(--mint)}.feedback{padding:11px;border-radius:10px;margin:10px 0}.good{background:#e7f2e7;color:#285a36}.bad{background:#f8e9e6;color:#8b352e}.bar{height:9px;background:#e6eae2;border-radius:20px;overflow:hidden}.bar>i{display:block;height:100%;background:var(--g);width:0}.section{margin:17px 0}.levelbox{border:1px solid var(--line);border-radius:14px;padding:13px;background:white}.levelbox strong{font:700 23px Georgia,serif;color:var(--g)}footer{text-align:center;color:var(--muted);font-size:12px;padding:25px}
+</style></head>
+<body>
+<header><div><div class="brand">Deutsch Kita 🇩🇪</div><div class="tag">Lies · Lerne · Übe · Wachse</div>
+<nav class="nav" id="nav">
+<button class="active" data-tab="home">Beranda</button><button data-tab="stories">Cerita</button><button data-tab="practice">Latihan</button><button data-tab="vocab">Kamus</button><button data-tab="grammar">Grammatik</button><button data-tab="progress">Progres</button>
+</nav></div></header>
+<main>
+<section id="home">
+<div class="hero"><h1>Willkommen bei Deutsch Kita!</h1><div>Belajar bahasa Jerman sedikit demi sedikit. Baca cerita, pahami kosakata, lalu uji kemampuanmu.</div><div class="stats"><span>📚 15 bacaan</span><span>🎯 Level A1–C1</span><span>🧠 Kuis interaktif</span></div></div>
+<div class="grid">
+<div class="levelbox"><strong id="homeRead">0</strong><div>Cerita dibaca</div></div>
+<div class="levelbox"><strong id="homeWords">0</strong><div>Kosakata tersimpan</div></div>
+<div class="levelbox"><strong id="homeScore">0%</strong><div>Akurasi kuis</div></div>
+</div>
+<div class="section"><h2>Mulai belajar</h2><div class="grid">
+<div class="card"><h3>📖 Baca cerita</h3><p class="small">Teks Jerman dan terjemahan Indonesia.</p><button class="primary" onclick="tab('stories')">Buka cerita</button></div>
+<div class="card"><h3>🎯 Uji kemampuan</h3><p class="small">Latihan kosakata dan tata bahasa.</p><button class="primary" onclick="tab('practice')">Mulai latihan</button></div>
+<div class="card"><h3>🧩 Pelajari Grammatik</h3><p class="small">Rumus singkat dan contoh kalimat.</p><button class="primary" onclick="tab('grammar')">Belajar Grammatik</button></div>
+</div></div>
+<div class="panel"><b>Catatan penting</b><p class="small">Data belajar disimpan di penyimpanan browser pada perangkat ini. Jika data browser dihapus atau kamu membuka file di browser/perangkat lain, progres mungkin tidak ikut berpindah. Aplikasi ini adalah versi web offline, belum APK Android atau akun online.</p></div>
+</section>
+
+<section id="stories" class="hidden">
+<h2>Perpustakaan cerita</h2><div class="row"><input id="search" placeholder="Cari cerita, tema, atau kata..."><select id="filter"><option value="">Semua level</option><option>A1</option><option>A2</option><option>B1</option><option>B2</option><option>C1</option></select></div>
+<div class="grid" id="storyGrid"></div><div id="reader" class="panel reader hidden"></div>
+</section>
+
+<section id="practice" class="hidden">
+<h2>Latihan interaktif 🎯</h2><p class="small">Pilih jenis latihan. Jawab, periksa, lalu lihat penjelasannya.</p>
+<div class="row"><button class="primary" onclick="startQuiz('vocab')">Kuis kosakata</button><button onclick="startQuiz('grammar')">Kuis Grammatik</button><button class="gold" onclick="startQuiz('mixed')">Kuis campuran</button></div>
+<div id="quiz" class="panel section"><p>Pilih salah satu kuis untuk memulai.</p></div>
+</section>
+
+<section id="vocab" class="hidden">
+<h2>Kamus pribadiku 📘</h2><p class="small">Simpan kata dari cerita atau tambahkan sendiri.</p>
+<div class="row"><input id="wordInput" placeholder="Kosakata bahasa Jerman"><input id="meaningInput" placeholder="Arti bahasa Indonesia"></div><button class="primary" onclick="addWord()">+ Simpan kata</button>
+<div class="panel section" id="wordList"></div>
+</section>
+
+<section id="grammar" class="hidden"><h2>Grammatik kompakt</h2><p class="small">Ringkasan dasar sampai menengah. Baca contoh dan perhatikan posisi kata kerja.</p><div class="grid" id="grammarGrid"></div></section>
+
+<section id="progress" class="hidden"><h2>Perjalanan belajarku 🌱</h2><div class="grid">
+<div class="levelbox"><strong id="pRead">0</strong><div>Cerita dibaca</div></div><div class="levelbox"><strong id="pFav">0</strong><div>Cerita favorit</div></div><div class="levelbox"><strong id="pWords">0</strong><div>Kosakata disimpan</div></div><div class="levelbox"><strong id="pQuiz">0</strong><div>Soal dijawab</div></div>
+</div><div class="panel section"><h3>Akurasi latihan</h3><div class="bar"><i id="accuracyBar"></i></div><p id="accuracyText" class="small">Belum ada jawaban.</p><button class="gold" onclick="resetAll()">Hapus seluruh progres</button></div></section>
+</main><footer>Deutsch Kita · Jeder kleine Schritt zählt. 🇩🇪</footer>
+<script>
+const stories=[
+["Die kleine Bäckerei","A1","Alltag","Am Morgen geht Lena in die Bäckerei. Sie kauft zwei Brötchen und einen Tee. Der Verkäufer wünscht ihr einen schönen Tag.","Pagi hari Lena pergi ke toko roti. Ia membeli dua roti kecil dan satu teh. Penjual mengucapkan semoga harinya menyenangkan.",[["die Bäckerei","toko roti","A1"],["das Brötchen","roti kecil","A1"],["wünschen","mengharapkan","A2"]]],
+["Ein Tag ohne Handy","A2","Alltag","Jonas legte sein Handy in eine Schublade. Zuerst wusste er nicht, was er machen sollte. Dann ging er spazieren und las ein Buch. Am Abend fühlte er sich ruhiger.","Jonas meletakkan ponselnya di dalam laci. Awalnya ia tidak tahu harus melakukan apa. Kemudian ia berjalan-jalan dan membaca buku. Pada malam hari ia merasa lebih tenang.",[["die Schublade","laci","A2"],["spazieren gehen","berjalan-jalan","A1"],["ruhig","tenang","A1"]]],
+["Ein guter Freund","A2","Freundschaft","Als Paul ein Problem hatte, hörte sein Freund ihm aufmerksam zu. Er gab nicht sofort Ratschläge, sondern fragte zuerst, was Paul wirklich brauchte.","Ketika Paul memiliki masalah, temannya mendengarkan dengan penuh perhatian. Ia tidak langsung memberi nasihat, tetapi bertanya apa yang sebenarnya dibutuhkan Paul.",[["aufmerksam","penuh perhatian","B1"],["der Ratschlag","nasihat","B1"],["brauchen","membutuhkan","A1"]]],
+["Der mutige Schritt","A2","Motivation","Mira hatte Angst vor ihrer Prüfung. Jeden Abend lernte sie ein bisschen. Am Prüfungstag war sie nervös, aber sie gab nicht auf.","Mira takut menghadapi ujiannya. Setiap malam ia belajar sedikit. Pada hari ujian ia gugup, tetapi tidak menyerah.",[["die Angst","ketakutan","A2"],["nervös","gugup","A2"],["aufgeben","menyerah","A2"]]],
+["Ein offenes Herz","B1","Drama","Sian vertraute den Menschen schnell. Er glaubte, dass Ehrlichkeit immer mit Ehrlichkeit beantwortet würde. Doch eines Tages stellte er fest, dass nicht jeder Mensch dieselben Werte hatte. Trotzdem wollte er sein Herz nicht verschließen.","Sian cepat percaya kepada orang lain. Ia percaya bahwa kejujuran selalu dibalas dengan kejujuran. Namun suatu hari ia menyadari bahwa tidak semua orang memiliki nilai yang sama. Meskipun begitu, ia tidak ingin menutup hatinya.",[["vertrauen","memercayai","B1"],["feststellen","menyadari","B1"],["der Wert","nilai","B1"],["verschließen","menutup","B2"]]],
+["Eine zufällige Begegnung","B1","Roman","An einem regnerischen Nachmittag begegnete Sian einem Mädchen namens Sherina. Sie warteten beide auf den Bus. Das Gespräch begann mit einer einfachen Frage und wurde langsam zu einer angenehmen Unterhaltung.","Pada suatu sore yang hujan, Sian bertemu dengan seorang perempuan bernama Sherina. Mereka berdua menunggu bus. Percakapan dimulai dengan pertanyaan sederhana dan perlahan menjadi obrolan yang menyenangkan.",[["zufällig","kebetulan","B1"],["begegnen","bertemu","B1"],["die Unterhaltung","percakapan","B1"]]],
+["Die Reise beginnt","B1","Abenteuer","Obwohl der Weg lang und anstrengend war, setzte die Gruppe ihre Reise fort. Sie mussten zusammenarbeiten, denn niemand konnte alle Schwierigkeiten allein überwinden.","Meskipun perjalanan panjang dan melelahkan, kelompok itu melanjutkan perjalanan. Mereka harus bekerja sama karena tidak seorang pun dapat mengatasi semua kesulitan sendirian.",[["anstrengend","melelahkan","B1"],["fortsetzen","melanjutkan","B1"],["überwinden","mengatasi","B2"]]],
+["Ein Brief an mich selbst","B2","Reflexion","Wenn ich heute auf mein früheres Leben zurückblicke, erkenne ich, dass selbst schwierige Erfahrungen mich geprägt haben. Nicht jeder Umweg war umsonst. Manche Erkenntnisse brauchen Zeit.","Ketika melihat kembali kehidupan dahulu, aku menyadari bahwa pengalaman sulit telah membentuk diriku. Tidak setiap jalan memutar itu sia-sia. Beberapa pemahaman membutuhkan waktu.",[["zurückblicken","melihat kembali","B2"],["prägen","membentuk","B2"],["die Erkenntnis","pemahaman","C1"]]],
+["Mehr als ein Erfolg","B2","Motivation","Erfolg lässt sich nicht ausschließlich an Geld oder Anerkennung messen. Viel entscheidender ist, ob wir mit unseren Entscheidungen zufrieden sind und Verantwortung übernehmen.","Kesuksesan tidak bisa diukur hanya dari uang atau pengakuan. Lebih penting apakah kita puas dengan keputusan dan mau bertanggung jawab.",[["ausschließlich","semata-mata","C1"],["die Anerkennung","pengakuan","B2"],["die Verantwortung","tanggung jawab","B1"]]],
+["Trotz allem finde ich mein Glück","B1","Roman","Sian hatte oft das Gefühl, zu viel gegeben und zu wenig zurückbekommen zu haben. Als er Sherina kennenlernte, wollte er nichts überstürzen. Er wusste inzwischen, dass Vertrauen wachsen muss. Gemeinsam entdeckten sie, dass Glück auch bedeutet, sich selbst treu zu bleiben.","Sian sering merasa telah memberi terlalu banyak dan menerima terlalu sedikit. Ketika mengenal Sherina, ia tidak ingin terburu-buru. Ia tahu bahwa kepercayaan harus tumbuh. Mereka menemukan bahwa kebahagiaan juga berarti tetap setia pada diri sendiri.",[["zurückbekommen","mendapatkan kembali","B1"],["überstürzen","terburu-buru","B2"],["miteinander umgehen","memperlakukan satu sama lain","B2"],["treu bleiben","tetap setia","B2"]]],
+["Der letzte Zug","B1","Drama","Der Zug war fast leer. Am Fenster saß ein älterer Mann und betrachtete die Lichter der Stadt. Er dachte darüber nach, wie schnell sich das Leben verändern kann.","Kereta hampir kosong. Di dekat jendela duduk seorang pria lanjut usia yang memandangi lampu kota. Ia memikirkan betapa cepat kehidupan dapat berubah.",[["betrachten","memandangi","B1"],["darüber nachdenken","memikirkan hal itu","B1"],["sich verändern","berubah","A2"]]],
+["Ein Plan für morgen","A2","Alltag","Nora schreibt drei Aufgaben auf einen Zettel. Sie möchte früher aufstehen, Deutsch lernen und ihrer Mutter helfen. Kleine Schritte sind besser als große Versprechen.","Nora menulis tiga tugas di selembar kertas. Ia ingin bangun lebih awal, belajar bahasa Jerman, dan membantu ibunya. Langkah kecil lebih baik daripada janji besar.",[["der Zettel","secarik kertas","A2"],["früher","lebih awal","A2"],["das Versprechen","janji","B1"]]],
+["Die unerwartete Hilfe","B1","Freundschaft","Kurz bevor Lea aufgeben wollte, bot ihr eine Kollegin Unterstützung an. Diese kleine Geste erinnerte sie daran, dass man nicht jede Herausforderung allein bewältigen muss.","Tepat sebelum Lea menyerah, seorang rekan kerja menawarkan bantuan. Tindakan kecil itu mengingatkannya bahwa kita tidak harus menghadapi setiap tantangan sendirian.",[["unerwartet","tidak terduga","B1"],["die Unterstützung","dukungan","B1"],["bewältigen","mengatasi","B2"]]],
+["Ein stiller Sonntag","B1","Familie","Am Sonntag blieb die Familie zu Hause. Sie kochten gemeinsam, erzählten Geschichten und lachten viel. Es war kein besonderer Tag, aber gerade deshalb war er wertvoll.","Pada hari Minggu keluarga itu tetap di rumah. Mereka memasak bersama, bercerita, dan tertawa. Itu bukan hari istimewa, tetapi justru karena itu terasa berharga.",[["gemeinsam","bersama-sama","A2"],["gerade deshalb","justru karena itu","B1"],["wertvoll","berharga","B1"]]],
+["Die Zukunft ist offen","C1","Reflexion","Niemand kann mit Sicherheit vorhersagen, welche Wendungen das Leben bereithält. Dennoch können wir beeinflussen, wie wir auf Veränderungen reagieren und welche Haltung wir einnehmen.","Tidak seorang pun dapat memprediksi dengan pasti perubahan apa yang disiapkan kehidupan. Namun kita dapat memengaruhi bagaimana bereaksi terhadap perubahan dan sikap yang kita ambil.",[["vorhersagen","meramalkan","C1"],["die Wendung","perubahan arah","C1"],["die Haltung","sikap","B2"]]],
+["Ein neuer Anfang","B1","Motivation","Manchmal beginnt ein neuer Abschnitt nicht mit einem großen Ereignis, sondern mit einer kleinen Entscheidung. Wer geduldig bleibt und weiterlernt, kann Schritt für Schritt viel erreichen.","Terkadang bagian baru dalam hidup tidak dimulai dengan peristiwa besar, melainkan keputusan kecil. Orang yang sabar dan terus belajar dapat mencapai banyak hal selangkah demi selangkah.",[["der Abschnitt","bagian/tahap","B2"],["geduldig","sabar","B1"],["erreichen","mencapai","A2"]]]
+];
+const grammar=[
+["Perfekt","haben/sein + Partizip II","Ich habe Deutsch gelernt. = Saya sudah belajar bahasa Jerman.","Sebagian besar kata kerja memakai haben. Kata kerja perpindahan atau perubahan tertentu memakai sein."],
+["Modalverben","Modalverb + ... + Infinitiv di akhir","Ich musste gestern lernen. = Kemarin saya harus belajar.","Modalverb dikonjugasikan, kata kerja utama tetap infinitif di akhir."],
+["weil","weil + subjek + ... + kata kerja di akhir","Ich lerne, weil ich die Prüfung bestehen möchte.","Weil berarti karena. Kata kerja terkonjugasi berada di akhir anak kalimat."],
+["obwohl","obwohl + kata kerja di akhir","Obwohl ich müde bin, lerne ich weiter.","Obwohl berarti meskipun. Jika anak kalimat di depan, kata kerja utama berada setelah koma."],
+["um ... zu","um + ... + zu + infinitif","Ich lerne, um in Deutschland zu studieren.","Menyatakan tujuan jika subjek kedua bagian sama."],
+["Passiv","werden + Partizip II","Das Auto wird repariert. = Mobil itu sedang diperbaiki.","Fokus pada tindakan atau objek, bukan pelakunya."],
+["Dativ","mit/bei/von/zu + Dativ","Ich fahre mit dem Bus. = Saya pergi dengan bus.","Perhatikan perubahan artikel: der menjadi dem, die menjadi der, das menjadi dem."],
+["Komparativ","Adjektiv + -er + als","Deutsch ist schwieriger als Englisch. = Bahasa Jerman lebih sulit daripada bahasa Inggris.","Dipakai untuk membandingkan dua hal. Beberapa kata memiliki bentuk khusus."]
+];
+const questions=[
+{t:"vocab",q:"Apa arti kata „die Herausforderung“?",o:["Tantangan","Keberhasilan","Kesempatan","Kebiasaan"],a:0,e:"Die Herausforderung berarti tantangan."},
+{t:"vocab",q:"Apa arti „zuverlässig“?",o:["Berisik","Dapat diandalkan","Mahal","Terburu-buru"],a:1,e:"Zuverlässig berarti dapat diandalkan."},
+{t:"vocab",q:"„aufgeben“ berarti ...",o:["melanjutkan","mengundang","menyerah","menemukan"],a:2,e:"Aufgeben berarti menyerah."},
+{t:"vocab",q:"Artikel yang benar untuk „Erfahrung“ adalah ...",o:["der","die","das","den"],a:1,e:"Die Erfahrung. Bentuk jamaknya die Erfahrungen."},
+{t:"vocab",q:"Apa arti „vermeiden“?",o:["menghindari","memperbaiki","menjelaskan","membandingkan"],a:0,e:"Vermeiden berarti menghindari."},
+{t:"grammar",q:"Ich lerne Deutsch, weil ich in Deutschland ___ möchte.",o:["arbeiten","arbeite","arbeitet","gearbeitet"],a:0,e:"Setelah modalverb möchte, kata kerja utama memakai infinitif arbeiten di akhir."},
+{t:"grammar",q:"Gestern ___ ich meine Hausaufgaben gemacht.",o:["bin","habe","werde","wurde"],a:1,e:"Machen membentuk Perfekt dengan haben: ich habe gemacht."},
+{t:"grammar",q:"Obwohl er müde ___, lernt er weiter.",o:["ist","sein","warst","haben"],a:0,e:"Subjek er memakai ist. Setelah obwohl, kata kerja berada di akhir anak kalimat."},
+{t:"grammar",q:"Das Essen ___ jeden Tag frisch gekocht.",o:["haben","wird","ist machen","werden"],a:1,e:"Passiv Präsens: werden + Partizip II. Das Essen wird gekocht."},
+{t:"grammar",q:"Ich fahre mit ___ Bus.",o:["der","den","dem","das"],a:2,e:"Mit selalu diikuti Dativ. Der Bus menjadi dem Bus."},
+{t:"grammar",q:"Ich spare Geld, um ein Fahrrad ___ kaufen.",o:["zu","für","dass","weil"],a:0,e:"Pola tujuan um ... zu + infinitif."},
+{t:"grammar",q:"Mein Bruder ist älter ___ ich.",o:["wie","als","denn","dass"],a:1,e:"Komparativ memakai als untuk perbandingan: älter als."}
+];
+let fav=JSON.parse(localStorage.getItem("dk6_fav")||"[]"),words=JSON.parse(localStorage.getItem("dk6_words")||"[]"),read=JSON.parse(localStorage.getItem("dk6_read")||"[]"),stats=JSON.parse(localStorage.getItem("dk6_stats")||'{"correct":0,"total":0}');
+function save(){localStorage.setItem("dk6_fav",JSON.stringify(fav));localStorage.setItem("dk6_words",JSON.stringify(words));localStorage.setItem("dk6_read",JSON.stringify(read));localStorage.setItem("dk6_stats",JSON.stringify(stats));}
+function tab(id){document.querySelectorAll("main section").forEach(x=>x.classList.add("hidden"));document.getElementById(id).classList.remove("hidden");document.querySelectorAll(".nav button").forEach(b=>b.classList.toggle("active",b.dataset.tab===id));if(id==="vocab")renderWords();if(id==="progress")renderProgress();if(id==="home")renderHome();window.scrollTo({top:0,behavior:"smooth"});}
+document.querySelectorAll(".nav button").forEach(b=>b.onclick=()=>tab(b.dataset.tab));
+function renderStories(){let q=document.getElementById("search").value.toLowerCase(),l=document.getElementById("filter").value;let arr=stories.map((s,i)=>({s,i})).filter(x=>(!l||x.s[1]===l)&&x.s.join(" ").toLowerCase().includes(q));document.getElementById("storyGrid").innerHTML=arr.map(({s,i})=>`<article class="card"><span class="pill">${s[1]}</span><span class="pill">${s[2]}</span><h3>${s[0]}</h3><p class="small">${s[3].slice(0,90)}...</p><div class="row"><button class="primary" onclick="openStory(${i})">Baca cerita</button><button class="gold" onclick="toggleFav(${i})">${fav.includes(i)?"♥":"♡"}</button></div></article>`).join("")||"<p>Belum ada cerita yang cocok.</p>";}
+document.getElementById("search").oninput=renderStories;document.getElementById("filter").onchange=renderStories;
+function openStory(i){let s=stories[i];if(!read.includes(i))read.push(i);save();let r=document.getElementById("reader");r.classList.remove("hidden");r.innerHTML=`<h2>${s[0]}</h2><span class="pill">${s[1]}</span><span class="pill">${s[2]}</span><p class="de">${s[3]}</p><div class="translation">${s[4]}</div><div class="row"><button onclick="speak(${i})">🔊 Dengarkan</button><button onclick="speechSynthesis.cancel()">■ Berhenti</button><button class="gold" onclick="toggleFav(${i})">${fav.includes(i)?"♥ Favorit":"♡ Favorit"}</button></div><h3>Kosakata penting</h3>${s[5].map(w=>`<div class="word"><span><b>${w[0]}</b><br><small>${w[1]} · ${w[2]}</small></span><button onclick="quickSave('${w[0].replace(/'/g,"\\'")}','${w[1].replace(/'/g,"\\'")}')">+ Simpan</button></div>`).join("")}<p class="small">Audio menggunakan suara Jerman yang tersedia pada browser/perangkat.</p>`;renderHome();r.scrollIntoView({behavior:"smooth"});}
+function speak(i){speechSynthesis.cancel();let u=new SpeechSynthesisUtterance(stories[i][3]);u.lang="de-DE";u.rate=.85;speechSynthesis.speak(u)}
+function toggleFav(i){fav=fav.includes(i)?fav.filter(x=>x!==i):[...fav,i];save();renderStories();renderHome();renderProgress();}
+function quickSave(w,m){if(!words.some(x=>x.w===w))words.push({w,m});save();alert("Kosakata tersimpan di Kamus!");renderWords();renderHome();}
+function addWord(){let w=document.getElementById("wordInput").value.trim(),m=document.getElementById("meaningInput").value.trim();if(!w||!m){alert("Isi kosakata dan artinya dulu, ya.");return;}quickSave(w,m);document.getElementById("wordInput").value="";document.getElementById("meaningInput").value="";}
+function renderWords(){document.getElementById("wordList").innerHTML=words.length?words.map((x,i)=>`<div class="word"><span><b>${x.w}</b><br><small>${x.m}</small></span><button onclick="delWord(${i})">Hapus</button></div>`).join(""):"Belum ada kata. Simpan kosakata dari cerita atau tambahkan sendiri.";}
+function delWord(i){words.splice(i,1);save();renderWords();renderHome();renderProgress();}
+document.getElementById("grammarGrid").innerHTML=grammar.map(g=>`<article class="card"><h3>${g[0]}</h3><b>${g[1]}</b><p>${g[2]}</p><p class="small">${g[3]}</p></article>`).join("");
+let current=[],answers={},qType="";
+function startQuiz(type){qType=type;current=questions.map((q,i)=>({q,i})).filter(x=>type==="mixed"||x.q.t===type).sort(()=>Math.random()-.5).slice(0,6);answers={};renderQuiz();document.getElementById("quiz").scrollIntoView({behavior:"smooth"});}
+function renderQuiz(){let box=document.getElementById("quiz");if(!current.length){box.innerHTML="<p>Pilih kuis di atas untuk memulai.</p>";return;}let idx=Object.keys(answers).length;if(idx>=current.length){let correct=0;current.forEach(x=>{if(answers[x.i]===x.q.a)correct++});box.innerHTML=`<h3>Ergebnis! Hasil latihan</h3><h2>${correct} / ${current.length} benar</h2><p>${Math.round(correct/current.length*100)}% jawaban benar. ${correct>=5?"Sehr gut! Pertahankan!":"Terus berlatih, kamu pasti makin paham."}</p>${current.map(x=>`<div class="word"><span><b>${x.q.q}</b><br><small>${x.q.o[x.q.a]} · ${x.q.e}</small></span><span>${answers[x.i]===x.q.a?"✅":"❌"}</span></div>`).join("")}<button class="primary" onclick="startQuiz('${qType}')">Coba lagi</button>`;return;}let x=current[idx];box.innerHTML=`<div class="small">Soal ${idx+1} dari ${current.length}</div><div class="bar"><i style="width:${idx/current.length*100}%"></i></div><h3>${x.q.q}</h3>${x.q.o.map((o,j)=>`<button class="choice ${answers[x.i]===j?"selected":""}" onclick="choose(${x.i},${j})">${String.fromCharCode(65+j)}. ${o}</button>`).join("")}<button class="primary" onclick="checkAnswer(${x.i})" ${answers[x.i]===undefined?"disabled":""}>Periksa jawaban</button><div id="feedback"></div>`;}
+function choose(i,j){answers[i]=j;renderQuiz();}
+function checkAnswer(i){let x=current.find(z=>z.i===i);if(answers[i]===undefined)return;let ok=answers[i]===x.q.a;stats.total++;if(ok)stats.correct++;save();document.getElementById("feedback").innerHTML=`<div class="feedback ${ok?"good":"bad"}">${ok?"Richtig! Jawaban benar.":"Belum tepat. Jawaban yang benar: "+x.q.o[x.q.a]}<br>${x.q.e}</div><button class="primary" onclick="renderQuiz()">Lanjut</button>`;document.querySelectorAll(".choice").forEach(b=>b.disabled=true);}
+function renderHome(){document.getElementById("homeRead").textContent=read.length;document.getElementById("homeWords").textContent=words.length;document.getElementById("homeScore").textContent=stats.total?Math.round(stats.correct/stats.total*100)+"%":"0%";}
+function renderProgress(){document.getElementById("pRead").textContent=read.length;document.getElementById("pFav").textContent=fav.length;document.getElementById("pWords").textContent=words.length;document.getElementById("pQuiz").textContent=stats.total;let pct=stats.total?Math.round(stats.correct/stats.total*100):0;document.getElementById("accuracyBar").style.width=pct+"%";document.getElementById("accuracyText").textContent=stats.total?`${stats.correct} benar dari ${stats.total} jawaban (${pct}%).`:"Belum ada jawaban kuis.";}
+function resetAll(){if(confirm("Yakin ingin menghapus semua progres, favorit, kamus, dan hasil kuis?")){fav=[];words=[];read=[];stats={correct:0,total:0};save();renderProgress();renderHome();renderWords();renderStories();}}
+renderStories();renderHome();renderProgress();
+</script>
+<script>
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('./sw.js').catch(err => console.log('Service worker:', err));
+  });
+}
+</script>
+
+</body></html>
